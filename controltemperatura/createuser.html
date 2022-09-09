@@ -1,13 +1,64 @@
 <!DOCTYPE html>
 
 <html lang="es">
-    <head>
+    <head>        
+        <link rel="stylesheet" href="css\style.css">
+        <link rel="stylesheet" href="https://bootswatch.com/5/litera/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+	</head>
+    <body>    
+        <form action="" method="post"> 
+        <div class="w3-container">
+            <div class="row pt-8">
+                <div class="col-md-4">
+                    <div class="contact_form">    
+                        <h1>Actualizar Usuario</h1>
+                        
+                        <label for="id_usuario" class="id_usuario">Id Usuario</label>
+                        <input type="text" name="id_usuario" id="id_usuario" required="obligatorio" placeholder="Id">
+                        <p></p>
+                                        
+                        <label for="nombre" class="nombre">Nombre</label>
+                        <input type="text" name="nombre" id="nombre" required="obligatorio" placeholder="Nombre">
+                        <p></p>
 
-    </head>
+                        <label for="apellido" class="apellido">Apellido</label>
+                        <input type="text" name="apellido" id="apellido" required="obligatorio" placeholder="Apellido">
+                        <p></p>
 
-    <body>
-        
+                        <label for="cedula" class="cedula">Cedula</label>
+                        <input type="text" name="cedula" id="cedula" placeholder="Cedula">
+                        <p></p>
+
+                        <label for="email" class="email">Email</label>
+                        <input type="email" name="email" id="email" required="obligatorio" placeholder="Email">
+                        <p></p>
+
+                        <label for="area" class="area">Area</label>                                          
+                        <select placeholder="area" name="area" id="area" required>
+                            <option disabled hidden selected>Areas</option>
+                            <option>Area 1</option>
+                            <option>Area 2</option>
+                            <option>Area 3</option>
+                            <option>Area 4</option>
+                        </select>
+                        <p></p>
+                        
+                        <button type="submit" name="enviar_formulario" id="enviar"><p>Actualizar</p></button>
+                        
+                    </div> 
+                    
+                </div>
+                <div class="col-md-3">
+                    <div class="contact_form">  
+
+                        <img src="imagen1" alt="Subir foto" style="width:300px;height:400px;">
+                        <input type="file" name="imagen1" />
+	                    <!-- <input type="submit" name="subir-imagen" value="Enviar imagen" /> -->
+                    </div> 
+                </div>                                
+            </div>
+        </div>                            
+    </form>
     </body>
-
-
 </html>
