@@ -6,6 +6,6 @@ import com.app.web.entidad.Usuarios;
 
 public interface UsuarioServicio {
 	
-	public List<Usuarios> Cargarusuario();
+	public List<Usuarios> listarTodoslosUsuarios();
 
 }

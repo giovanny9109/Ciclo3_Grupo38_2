@@ -17,7 +17,7 @@ public class Usuarios {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(name = "fecha", nullable = false)
+	@Column(name = "fecha", nullable = true)
 	private Date fecha;
 	@Column()
 	private Float temperatura;
