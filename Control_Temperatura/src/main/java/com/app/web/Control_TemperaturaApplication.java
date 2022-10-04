@@ -24,7 +24,7 @@ public class Control_TemperaturaApplication implements CommandLineRunner {
 		repositorio.save(usuario1);
 
 		Usuarios usuario2 = new Usuarios(null, null, null, "Cadena2", "Area2", 12, "Sin observacion2");
-		repositorio.save(usuario2);
+        repositorio.save(usuario2);
 		
 	}
 

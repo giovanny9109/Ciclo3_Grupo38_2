@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<meta charset="UTF-8">
+<title>Crear usuarios</title>
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class = "col-lg-6 col-md-6 col_sm-6 container justify-content-center">
+				<h2 class="text-center">Crear usuario</h2>
+				<div class="card-body">
+					<form th:action="@{/usuarios}" th:objeto="${usuarios}" method="post">
+					<div class="form-group">
+						<label>Nombre</label>
+						<input>
+					</div>
+					<div class="form-group">
+						<label>Area</label>
+						<input>
+					</div>
+					<div class="form-group">
+						<label>Temperatura</label>
+						<input>
+					</div>
+					</form>
+				</div>
+			
+			</div>
+		
+		</div>
+	
+	</div>
+
+
+</body>
+</html>

@@ -27,9 +27,9 @@ public class Usuarios {
 	private String cadenaFrio;
 	@Column(name = "areaOperativa", nullable = false, length = 120)
 	private String areaOperativa;
-	@Column()
-	private Integer encargadoID;
-	@Column(name = "oservacion", nullable = false, length = 120)
+	@Column(name = "encargadoid")
+	private Integer encargadoid;
+	@Column(name = "observacion", nullable = false, length = 120)
 	private String observacion;
 	
 	public Usuarios(Integer id, Date fecha, Float temperatura, Float humedad, String cadenaFrio, String areaOperativa,
@@ -41,7 +41,7 @@ public class Usuarios {
 		this.humedad = humedad;
 		this.cadenaFrio = cadenaFrio;
 		this.areaOperativa = areaOperativa;
-		this.encargadoID = encargadoID;
+		this.encargadoid = encargadoID;
 		this.observacion = observacion;
 	}
 
@@ -53,7 +53,7 @@ public class Usuarios {
 		this.humedad = humedad;
 		this.cadenaFrio = cadenaFrio;
 		this.areaOperativa = areaOperativa;
-		this.encargadoID = encargadoID;
+		this.encargadoid = encargadoID;
 		this.observacion = observacion;
 	}
 
@@ -109,11 +109,11 @@ public class Usuarios {
 	}
 
 	public Integer getEncargadoID() {
-		return encargadoID;
+		return encargadoid;
 	}
 
 	public void setEncargadoID(Integer encargadoID) {
-		this.encargadoID = encargadoID;
+		this.encargadoid = encargadoID;
 	}
 
 	public String getObservacion() {
@@ -127,7 +127,7 @@ public class Usuarios {
 	@Override
 	public String toString() {
 		return "Usuarios [id=" + id + ", fecha=" + fecha + ", temperatura=" + temperatura + ", humedad=" + humedad
-				+ ", cadenaFrio=" + cadenaFrio + ", areaOperativa=" + areaOperativa + ", encargadoID=" + encargadoID
+				+ ", cadenaFrio=" + cadenaFrio + ", areaOperativa=" + areaOperativa + ", encargadoID=" + encargadoid
 				+ ", observacion=" + observacion + "]";
 	}
 	
