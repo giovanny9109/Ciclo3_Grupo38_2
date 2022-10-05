@@ -1,6 +1,8 @@
 package com.app.web.entidad;
 
-import java.util.Date;
+
+
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,8 +29,8 @@ public class Usuarios {
 	private String cadenaFrio;
 	@Column(name = "areaOperativa", nullable = false, length = 120)
 	private String areaOperativa;
-	@Column(name = "encargadoid")
-	private Integer encargadoid;
+	@Column(name = "encargadoID")
+	private Integer encargadoID;
 	@Column(name = "observacion", nullable = false, length = 120)
 	private String observacion;
 	
@@ -41,7 +43,7 @@ public class Usuarios {
 		this.humedad = humedad;
 		this.cadenaFrio = cadenaFrio;
 		this.areaOperativa = areaOperativa;
-		this.encargadoid = encargadoID;
+		this.encargadoID = encargadoID;
 		this.observacion = observacion;
 	}
 
@@ -53,7 +55,7 @@ public class Usuarios {
 		this.humedad = humedad;
 		this.cadenaFrio = cadenaFrio;
 		this.areaOperativa = areaOperativa;
-		this.encargadoid = encargadoID;
+		this.encargadoID = encargadoID;
 		this.observacion = observacion;
 	}
 
@@ -109,11 +111,11 @@ public class Usuarios {
 	}
 
 	public Integer getEncargadoID() {
-		return encargadoid;
+		return encargadoID;
 	}
 
 	public void setEncargadoID(Integer encargadoID) {
-		this.encargadoid = encargadoID;
+		this.encargadoID = encargadoID;
 	}
 
 	public String getObservacion() {
@@ -127,7 +129,7 @@ public class Usuarios {
 	@Override
 	public String toString() {
 		return "Usuarios [id=" + id + ", fecha=" + fecha + ", temperatura=" + temperatura + ", humedad=" + humedad
-				+ ", cadenaFrio=" + cadenaFrio + ", areaOperativa=" + areaOperativa + ", encargadoID=" + encargadoid
+				+ ", cadenaFrio=" + cadenaFrio + ", areaOperativa=" + areaOperativa + ", encargadoID=" + encargadoID
 				+ ", observacion=" + observacion + "]";
 	}
 	

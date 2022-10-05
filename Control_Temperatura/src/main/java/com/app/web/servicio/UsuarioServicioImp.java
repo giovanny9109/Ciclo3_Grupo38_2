@@ -18,6 +18,11 @@ public class UsuarioServicioImp implements UsuarioServicio{
 	public List<Usuarios> listarTodoslosUsuarios() {
 		return repositorio.findAll();
 	}
+
+	@Override
+	public Usuarios guardarusuarios(Usuarios usuarios) {
+		return repositorio.save(usuarios);
+	}
 	
 
 }

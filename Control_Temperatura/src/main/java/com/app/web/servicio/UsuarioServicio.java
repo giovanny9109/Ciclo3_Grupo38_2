@@ -7,5 +7,7 @@ import com.app.web.entidad.Usuarios;
 public interface UsuarioServicio {
 	
 	public List<Usuarios> listarTodoslosUsuarios();
+	
+	public Usuarios guardarusuarios(Usuarios usuarios);
 
 }

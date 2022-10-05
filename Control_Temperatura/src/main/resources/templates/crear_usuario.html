@@ -7,24 +7,46 @@
 <title>Crear usuarios</title>
 </head>
 <body>
-
+	<br>
 	<div class="container">
 		<div class="row">
 			<div class = "col-lg-6 col-md-6 col_sm-6 container justify-content-center">
 				<h2 class="text-center">Crear usuario</h2>
 				<div class="card-body">
-					<form th:action="@{/usuarios}" th:objeto="${usuarios}" method="post">
+					<form th:action="@{/usuarios}" th:object="${usuarios}" method="POST">
+					
 					<div class="form-group">
-						<label>Nombre</label>
-						<input>
+						<label>Area Operativa</label>
+						<input type="text" name="area_operativa"  th:field="*{areaOperativa}" class="form-control"
+						placeholder="Digite el area operativa...">
 					</div>
 					<div class="form-group">
-						<label>Area</label>
-						<input>
+						<label>Cadena de frio</label>
+						<input type="text" name="cadena_frio"  th:field="*{cadenaFrio}" class="form-control"
+						placeholder="Digite la cadena de frío...">
 					</div>
 					<div class="form-group">
-						<label>Temperatura</label>
-						<input>
+						<label>Encargado</label>
+						<input type="text" name="encargadoid"  th:field="*{encargadoID}" class="form-control"
+						placeholder="Encargado...">
+					</div>
+					<div class="form-group">
+						<label>Fecha</label>
+						<input type="date" name="fecha"  th:field="*{fecha}" class="form-control">
+					</div>
+					<div class="form-group">
+						<label>Humedad</label>
+						<input type="text" name="humedad"  th:field="*{humedad}" class="form-control"
+						placeholder="Humedad...">
+					</div>
+					<div class="form-group">
+						<label>Observación</label>
+						<input type="text" name="observacion"  th:field="*{observacion}" class="form-control"
+						placeholder="Observación...">
+					</div>
+					<br>
+					<div class="box-footer">
+						<button class="btn btn-success">Guardar</button>
 					</div>
 					</form>
 				</div>
