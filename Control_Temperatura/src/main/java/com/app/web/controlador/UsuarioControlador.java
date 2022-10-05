@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.app.web.entidad.Usuarios;
@@ -20,7 +21,12 @@ public class UsuarioControlador {
 	@GetMapping("/index")
 	public String index(){
 		return "index";
-	}
+	}	
+	
+	@GetMapping("/index/usuarios")
+	public String redirect(){
+		return "redirect:/usuarios";
+	}	
 	
 	@GetMapping("/usuarios")
 	public String listarusuarios(Model modelo) {
@@ -40,4 +46,29 @@ public class UsuarioControlador {
 		servicio.guardarusuarios(usuarios);
 		return "redirect:/usuarios";
 	}
+
+	@GetMapping("/usuarios/editar/{id}")
+	public String editarusuarioForm(@PathVariable Integer id, Model modelo) {
+		modelo.addAttribute("usuarios", servicio.obtenerusuarioPorId(id));
+		return "editar_usuario";
+	}
+	
+	@PostMapping("/usuarios/{id}")
+	public String actualizaUsuario(@PathVariable Integer id, @ModelAttribute("usuarios") Usuarios usuarios, Model modelo) {
+		Usuarios usuario = servicio.obtenerusuarioPorId(id);
+		usuario.setId(id);
+		usuario.setAreaOperativa(usuarios.getAreaOperativa());
+		usuario.setCadenaFrio(usuarios.getCadenaFrio());
+		usuario.setEncargadoID(usuarios.getEncargadoID());
+		usuario.setFecha(usuarios.getFecha());
+		usuario.setHumedad(usuarios.getHumedad());
+		usuario.setObservacion(usuarios.getObservacion());
+		usuario.setTemperatura(usuarios.getTemperatura());
+		
+		servicio.actualizarusuarios(usuario);
+		
+		return "redirect:/usuarios";
+	}
+	
+	
 }

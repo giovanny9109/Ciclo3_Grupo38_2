@@ -23,6 +23,22 @@ public class UsuarioServicioImp implements UsuarioServicio{
 	public Usuarios guardarusuarios(Usuarios usuarios) {
 		return repositorio.save(usuarios);
 	}
+
+	@Override
+	public Usuarios obtenerusuarioPorId(Integer id) {
+		return repositorio.findById(id).get();		
+	}
+
+	@Override
+	public Usuarios actualizarusuarios(Usuarios usuarios) {
+		return repositorio.save(usuarios);
+	}
+
+	@Override
+	public void eliminarusuario(Integer id) {
+		repositorio.deleteById(id);
+		
+	}
 	
 
 }

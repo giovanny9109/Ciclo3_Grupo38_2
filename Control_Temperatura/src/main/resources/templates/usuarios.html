@@ -17,15 +17,21 @@
   			<thead class="table-dark">
   				<tr>
   					<th>Area operativa</th>
+  					<th>Cadena de frio</th>
   					<th>Encargado</th>
-  					<th>Area</th>
+  					<th>Fecha</th>
+  					<th>Humedad</th>
+  					<th>Observación</th>
   				</tr>
   			</thead>
  			<tbody>
  				<tr th:each="usuarios : ${usuarios}">
- 					<td th:text = "${usuarios.fecha}">Fecha</td> 
- 					<td th:text = "${usuarios.observacion}">Encargado</td>
-  					<td th:text = "${usuarios.temperatura}">Temperatura</td>
+ 					<td th:text = "${usuarios.areaOperativa}">Area Operativa</td> 
+ 					<td th:text = "${usuarios.cadenaFrio}">Cadena de frio</td>
+  					<td th:text = "${usuarios.encargadoID}">Encargado</td>
+  					<td th:text = "${usuarios.fecha}">Fecha</td> 
+ 					<td th:text = "${usuarios.humedad}">Humedad</td>
+  					<td th:text = "${usuarios.observacion}">Observación</td>
  				</tr>
 
   			</tbody>
