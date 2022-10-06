@@ -13,6 +13,13 @@
 		<div class="row">
 			<h2>Lista de usuarios</h2>
 		</div>
+		
+		<div class="row">
+			<div class="col-lg-3">
+			<a th:href="@{/usuarios/nuevo}" class="btn btn-success">Agregar usuario</a>
+			</div>
+		</div>
+		<br>
 		<table class="table">
   			<thead class="table-dark">
   				<tr>
@@ -35,6 +42,7 @@
   					<td th:text = "${usuarios.observacion}">Observación</td>
   					<td>
   					<a th:href="@{/usuarios/editar/{id}(id=${usuarios.id})}" class="btn btn-primary">Editar</a>
+  					<a th:href="@{/usuarios/{id}(id=${usuarios.id})}" class="btn btn-danger">Eliminar</a>
   					</td>
  				</tr>
   			</tbody>  			

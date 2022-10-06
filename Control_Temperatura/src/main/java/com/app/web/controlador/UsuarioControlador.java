@@ -70,5 +70,11 @@ public class UsuarioControlador {
 		return "redirect:/usuarios";
 	}
 	
+	@GetMapping("usuarios/{id}")
+	public String eliminarUsuario(@PathVariable Integer id) {
+		servicio.eliminarusuario(id);
+		return "redirect:/usuarios";
+	}
+	
 	
 }
