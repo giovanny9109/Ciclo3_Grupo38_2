@@ -4,16 +4,16 @@
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 <meta charset="UTF-8">
-<title>Crear usuarios</title>
+<title>Editar usuarios</title>
 </head>
 <body>
 	<br>
 	<div class="container">
 		<div class="row">
 			<div class = "col-lg-6 col-md-6 col_sm-6 container justify-content-center">
-				<h2 class="text-center">Crear usuario</h2>
+				<h2 class="text-center">Editar usuario</h2>
 				<div class="card-body">
-					<form th:action="@{/usuarios}" th:object="${usuarios}" method="POST">
+					<form th:action="@{/usuarios/{id}(id=${usuarios.id})}" th:object="${usuarios}" method="POST">
 					
 					<div class="form-group">
 						<label>Area Operativa</label>
@@ -58,14 +58,4 @@
 	</div>
 
 </body>
-<footer class="bg-light text-center text-lg-start">
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2020 Copyright:
-    <img src="https://w7.pngwing.com/pngs/631/1001/png-transparent-computer-icons-facebook-social-media-email-share-icon-facebook-blue-text-trademark.png" width="42"> <a href="https://facebook.com" target="_BLANK">      facebook </a>
-	      <img src="https://i.blogs.es/c04a74/instagram/1366_2000.jpg" width="42"> <a href="https://instagram.com" target="_BLANK">    instagram </a> 
-	    <img src="https://www.fcme.org/wp-content/uploads/Twitter-logo.jpg" width="42"><a href="https://twiter.com" target="_BLANK">        twiter </a>  
-  </div>
-  <!-- Copyright -->
-</footer>
 </html>

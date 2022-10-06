@@ -22,6 +22,7 @@
   					<th>Fecha</th>
   					<th>Humedad</th>
   					<th>Observación</th>
+  					<th>Acciones</th>
   				</tr>
   			</thead>
  			<tbody>
@@ -32,9 +33,11 @@
   					<td th:text = "${usuarios.fecha}">Fecha</td> 
  					<td th:text = "${usuarios.humedad}">Humedad</td>
   					<td th:text = "${usuarios.observacion}">Observación</td>
+  					<td>
+  					<a th:href="@{/usuarios/editar/{id}(id=${usuarios.id})}" class="btn btn-primary">Editar</a>
+  					</td>
  				</tr>
-
-  			</tbody>
+  			</tbody>  			
 		</table>
 	
 	</div>
