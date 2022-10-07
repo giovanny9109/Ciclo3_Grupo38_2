@@ -2,8 +2,11 @@ package com.app.web.servicio;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.app.web.entidad.Usuarios;
 
+@Service
 public interface UsuarioServicio {
 	
 	public List<Usuarios> listarTodoslosUsuarios();

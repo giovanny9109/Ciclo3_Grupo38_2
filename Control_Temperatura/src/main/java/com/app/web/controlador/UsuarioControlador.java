@@ -8,15 +8,65 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.app.web.entidad.Area;
 import com.app.web.entidad.Usuarios;
+import com.app.web.servicio.AreaServicio;
 import com.app.web.servicio.UsuarioServicio;
 
 
 @Controller
 public class UsuarioControlador {
 
-	@Autowired 
+	@Autowired(required = false)
 	private UsuarioServicio servicio;
+	
+	@Autowired(required = false)
+	private AreaServicio areaservicio;
+	
+	@GetMapping("/area")
+	public String listararea(Model modelo) {
+		modelo.addAttribute("area", areaservicio.listarTodasLasAreas());
+		return "area";
+	}  
+	
+	@GetMapping("/area/nuevo")
+	public String crearareaformulario(Model modelo) {
+		Area area = new Area();
+		modelo.addAttribute("area", area);
+		return "crear_area";
+	} 
+	
+	@PostMapping("area")
+	public String guardarArea(@ModelAttribute("area") Area area) {
+		areaservicio.guardararea(area);
+		return "redirect:/area";
+	}
+
+	@GetMapping("/area/editar/{id}")
+	public String editarAreaForm(@PathVariable Integer id, Model modelo) {
+		modelo.addAttribute("area", areaservicio.obtenerareasPorId(id));
+		return "editar_area";
+	}
+	
+	@PostMapping("/area/{id}")
+	public String actualizaArea(@PathVariable Integer id, @ModelAttribute("area") Area areas, Model modelo) {
+		Area area = areaservicio.obtenerareasPorId(id);
+		area.setId(id);
+		area.setnombrearea(areas.getnombrearea());
+		
+		areaservicio.actualizararea(area);
+		
+		return "redirect:/area";
+	}
+	
+	@GetMapping("area/{id}")
+	public String eliminarArea(@PathVariable Integer id) {
+		areaservicio.eliminararea(id);
+		return "redirect:/area";
+	}
+
+	
+	
 	
 	@GetMapping("/index")
 	public String index(){
@@ -38,6 +88,7 @@ public class UsuarioControlador {
 	public String crearusuarioformulario(Model modelo) {
 		Usuarios usuario = new Usuarios();
 		modelo.addAttribute("usuarios", usuario);
+		modelo.addAttribute("area", areaservicio.listarTodasLasAreas());		
 		return "crear_usuario";
 	} 
 	
@@ -75,6 +126,11 @@ public class UsuarioControlador {
 		servicio.eliminarusuario(id);
 		return "redirect:/usuarios";
 	}
+	
+	@PostMapping("/arearesearch")
+    public String areaPost(@ModelAttribute("area") Area area) {
+        return "arearesearch";
+    }
 	
 	
 }

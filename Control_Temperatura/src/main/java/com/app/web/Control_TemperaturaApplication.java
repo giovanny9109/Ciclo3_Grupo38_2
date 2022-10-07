@@ -5,7 +5,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.app.web.entidad.Area;
 import com.app.web.entidad.Usuarios;
+import com.app.web.repositorio.AreaRepositorio;
 import com.app.web.repositorio.UsuarioRepositorio;
 
 @SpringBootApplication
@@ -17,6 +19,9 @@ public class Control_TemperaturaApplication implements CommandLineRunner {
 
 	@Autowired
 	private UsuarioRepositorio repositorio;
+	
+	@Autowired
+	private AreaRepositorio areaRepositorio;
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -25,6 +30,9 @@ public class Control_TemperaturaApplication implements CommandLineRunner {
 
 		Usuarios usuario2 = new Usuarios(null, null, null, "Cadena2", "Area2", 12, "Sin observacion2");
         repositorio.save(usuario2);*/
+		
+		/*Area area = new Area("Area1");
+		areaRepositorio.save(area);*/
 		
 	}
 

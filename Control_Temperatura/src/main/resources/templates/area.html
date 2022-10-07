@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<meta charset="UTF-8">
+<title>Crear usuarios</title>
+</head>
+<body>
+
+	<div class="container">
+	
+		<div class="row">
+			<h2>Lista de areas</h2>
+		</div>
+		
+		<div class="row">
+			<div class="col-lg-3">
+			<a th:href="@{/area/nuevo}" class="btn btn-success">Agregar area</a>
+			</div>
+		</div>
+		<br>
+		<table class="table">
+  			<thead class="table-dark">
+  				<tr>
+  					<th>Id area</th>
+  					<th>Nombre area</th>  
+  					<th>Acciones</th>					
+  				</tr>
+  			</thead>
+ 			<tbody>
+ 				<tr th:each="area : ${area}">
+ 					<td th:text = "${area.id}">Id area</td>
+ 					<td th:text = "${area.id}">Nombre area</td>
+  					<td>
+  					<a th:href="@{/area/editar/{id}(id=${area.id})}" class="btn btn-primary">Editar</a>
+  					<a th:href="@{/area/{id}(id=${area.id})}" class="btn btn-danger">Eliminar</a>
+  					</td>
+ 				</tr>
+  			</tbody>  			
+		</table>
+	
+	</div>
+
+
+</body>
+</html>
