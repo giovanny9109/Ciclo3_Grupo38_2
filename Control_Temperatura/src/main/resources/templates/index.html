@@ -2,18 +2,41 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 <meta charset="UTF-8">
-<title>Control de Temperatura</title>
-<link rel="stylesheet" href="control.css">
+  <title>Control de Temperatura</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link  href="https://fonts.googleapis.com/css2?family=Peralta&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
 <body>
-
-    <h1 style="text-align: center;">Pagina Principal</h1>
+<header>
+        <h3>
+        <div class="logo"> 
+          <img src="logo.png" alt="logo">
+          <h2 class="compañia">Control test</h2>
+        </div>
+      </h3>
+	<div id="header">
+	<ul class="nav">
+	  <li><a href="index.html">inicio</a>
+           <ul>
+            <li><a href="registro.html">registro</a> </li>
+            <li><a href="area"> area </a></li>
+            <li><a href="crear_area.html">crear area</a></li>
+            <li><a href="usuarios.html"> usuario</a></li>
+            <li><a href="crear_registro.html">Registro de parametros</a></li>
+            <li><a href="crear_usuario.html"> crear usuarios</a></li>
+           </ul>
+        </li>
+      </ul>
+</header>	
         <main>
-         <a th:href=@{/usuarios}>Usuaro</a>                               
-                
+         <a th:href=@{/usuarios}>Usuario</a>                                      
         </main>
+	<p>
+		Control test es una empresa dedicada  al cuidado de los ambientes en las diferentes áreas de los hospitales garantizando así el cuidado óptimo de los pacientes y velando a su vez por una mejora en la salud de las personas.
+	</p>	
     </div>
     </div>
 </div>
