@@ -19,47 +19,35 @@ public class Usuarios {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(name = "fecha", nullable = true)
-	private Date fecha;
+	@Column(name = "nombre", nullable = true)
+	private String nombre;
+	@Column(name = "apellido", nullable = false, length = 120)
+	private String apellido;
 	@Column()
-	private Float temperatura;
-	@Column()
-	private Float humedad;
-	@Column(name = "cadenaFrio", nullable = false, length = 120)
-	private String cadenaFrio;
-	@Column(name = "areaOperativa", nullable = false, length = 120)
-	private String areaOperativa;
-	@Column(name = "encargadoID")
-	private Integer encargadoID;
-	@Column(name = "observacion", nullable = false, length = 120)
-	private String observacion;
+	private Integer identificacion;	
+	@Column(name = "email", nullable = false, length = 120)
+	private String email;
 	
-	public Usuarios(Integer id, Date fecha, Float temperatura, Float humedad, String cadenaFrio, String areaOperativa,
-			Integer encargadoID, String observacion) {
+	
+	
+	public Usuarios() {
+	}
+
+	public Usuarios(Integer id, String nombre, String apellido, Integer identificacion, String email) {
 		super();
 		this.id = id;
-		this.fecha = fecha;
-		this.temperatura = temperatura;
-		this.humedad = humedad;
-		this.cadenaFrio = cadenaFrio;
-		this.areaOperativa = areaOperativa;
-		this.encargadoID = encargadoID;
-		this.observacion = observacion;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.identificacion = identificacion;
+		this.email = email;
 	}
 
-	public Usuarios(Date fecha, Float temperatura, Float humedad, String cadenaFrio, String areaOperativa,
-			Integer encargadoID, String observacion) {
+	public Usuarios(String nombre, String apellido, Integer identificacion, String email) {
 		super();
-		this.fecha = fecha;
-		this.temperatura = temperatura;
-		this.humedad = humedad;
-		this.cadenaFrio = cadenaFrio;
-		this.areaOperativa = areaOperativa;
-		this.encargadoID = encargadoID;
-		this.observacion = observacion;
-	}
-
-	public Usuarios() {
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.identificacion = identificacion;
+		this.email = email;
 	}
 
 	public Integer getId() {
@@ -70,70 +58,43 @@ public class Usuarios {
 		this.id = id;
 	}
 
-	public Date getFecha() {
-		return fecha;
+	public String getNombre() {
+		return nombre;
 	}
 
-	public void setFecha(Date fecha) {
-		this.fecha = fecha;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
-	public Float getTemperatura() {
-		return temperatura;
+	public String getApellido() {
+		return apellido;
 	}
 
-	public void setTemperatura(Float temperatura) {
-		this.temperatura = temperatura;
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
 	}
 
-	public Float getHumedad() {
-		return humedad;
+	public Integer getIdentificacion() {
+		return identificacion;
 	}
 
-	public void setHumedad(Float humedad) {
-		this.humedad = humedad;
+	public void setIdentificacion(Integer identificacion) {
+		this.identificacion = identificacion;
 	}
 
-	public String getCadenaFrio() {
-		return cadenaFrio;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setCadenaFrio(String cadenaFrio) {
-		this.cadenaFrio = cadenaFrio;
-	}
-
-	public String getAreaOperativa() {
-		return areaOperativa;
-	}
-
-	public void setAreaOperativa(String areaOperativa) {
-		this.areaOperativa = areaOperativa;
-	}
-
-	public Integer getEncargadoID() {
-		return encargadoID;
-	}
-
-	public void setEncargadoID(Integer encargadoID) {
-		this.encargadoID = encargadoID;
-	}
-
-	public String getObservacion() {
-		return observacion;
-	}
-
-	public void setObservacion(String observacion) {
-		this.observacion = observacion;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	@Override
 	public String toString() {
-		return "Usuarios [id=" + id + ", fecha=" + fecha + ", temperatura=" + temperatura + ", humedad=" + humedad
-				+ ", cadenaFrio=" + cadenaFrio + ", areaOperativa=" + areaOperativa + ", encargadoID=" + encargadoID
-				+ ", observacion=" + observacion + "]";
+		return "Usuarios [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", identificacion="
+				+ identificacion + ", email=" + email + "]";
 	}
-	
-	
 	
 	
 	

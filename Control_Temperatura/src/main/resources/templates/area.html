@@ -31,7 +31,7 @@
  			<tbody>
  				<tr th:each="area : ${area}">
  					<td th:text = "${area.id}">Id area</td>
- 					<td th:text = "${area.id}">Nombre area</td>
+ 					<td th:text = "${area.nombrearea}">Nombre area</td>
   					<td>
   					<a th:href="@{/area/editar/{id}(id=${area.id})}" class="btn btn-primary">Editar</a>
   					<a th:href="@{/area/{id}(id=${area.id})}" class="btn btn-danger">Eliminar</a>

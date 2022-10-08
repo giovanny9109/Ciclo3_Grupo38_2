@@ -4,41 +4,45 @@
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 <meta charset="UTF-8">
-<title>Crear usuarios</title>
+<title>Agregar registro</title>
 </head>
 <body>
 
 	<div class="container">
 	
 		<div class="row">
-			<h2>Lista de usuarios</h2>
+			<h2>Agregar registro</h2>
 		</div>
 		
 		<div class="row">
 			<div class="col-lg-3">
-			<a th:href="@{/usuarios/nuevo}" class="btn btn-success">Agregar usuario</a>
+			<a th:href="@{/registro/nuevo}" class="btn btn-success">Agregar registro</a>
 			</div>
 		</div>
 		<br>
 		<table class="table">
   			<thead class="table-dark">
   				<tr>
-  					<th>Nombre</th>
-  					<th>Apellido</th>
-  					<th>Cédula</th>
-  					<th>E-mail</th>
+  					<th>Area operativa</th>
+  					<th>Cadena de frio</th>
+  					<th>Encargado</th>
+  					<th>Fecha</th>
+  					<th>Humedad</th>
+  					<th>Observación</th>
   					<th>Acciones</th>
   				</tr>
   			</thead>
  			<tbody>
- 				<tr th:each="usuarios : ${usuarios}">
- 					<td th:text = "${usuarios.nombre}">Nombre</td> 
- 					<td th:text = "${usuarios.apellido}">Apellido</td>
-  					<td th:text = "${usuarios.identificacion}">Cédula</td>
-  					<td th:text = "${usuarios.email}">E-mail</td> 
+ 				<tr th:each="registro : ${registro}">
+ 					<td th:text = "${registro.areaOperativa}">Area Operativa</td> 
+ 					<td th:text = "${registro.cadenaFrio}">Cadena de frio</td>
+  					<td th:text = "${registro.encargadoID}">Encargado</td>
+  					<td th:text = "${registro.fecha}">Fecha</td> 
+ 					<td th:text = "${registro.humedad}">Humedad</td>
+  					<td th:text = "${registro.observacion}">Observación</td>
   					<td>
-  					<a th:href="@{/usuarios/editar/{id}(id=${usuarios.id})}" class="btn btn-primary">Editar</a>
-  					<a th:href="@{/usuarios/{id}(id=${usuarios.id})}" class="btn btn-danger">Eliminar</a>
+  					<a th:href="@{/registro/editar/{id}(id=${registro.id})}" class="btn btn-primary">Editar</a>
+  					<a th:href="@{/registro/{id}(id=${registro.id})}" class="btn btn-danger">Eliminar</a>
   					</td>
  				</tr>
   			</tbody>  			

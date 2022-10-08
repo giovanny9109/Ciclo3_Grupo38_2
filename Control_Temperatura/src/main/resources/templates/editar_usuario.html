@@ -16,34 +16,25 @@
 					<form th:action="@{/usuarios/{id}(id=${usuarios.id})}" th:object="${usuarios}" method="POST">
 					
 					<div class="form-group">
-						<label>Area Operativa</label>
-						<input type="text" name="area_operativa"  th:field="*{areaOperativa}" class="form-control"
-						placeholder="Digite el area operativa...">
+						<label>Nombre</label>
+						<input type="text" name="nombre"  th:field="*{nombre}" class="form-control"
+						placeholder="Digite el nombre...">
 					</div>
 					<div class="form-group">
-						<label>Cadena de frio</label>
-						<input type="text" name="cadena_frio"  th:field="*{cadenaFrio}" class="form-control"
-						placeholder="Digite la cadena de frío...">
+						<label>Apellido</label>
+						<input type="text" name="apellido"  th:field="*{apellido}" class="form-control"
+						placeholder="Digite el apellido...">
 					</div>
 					<div class="form-group">
-						<label>Encargado</label>
-						<input type="text" name="encargadoid"  th:field="*{encargadoID}" class="form-control"
-						placeholder="Encargado...">
+						<label>Cédula</label>
+						<input type="text" name="identificacion"  th:field="*{identificacion}" class="form-control"
+						placeholder="Digite la cédula...">
 					</div>
 					<div class="form-group">
-						<label>Fecha</label>
-						<input type="date" name="fecha"  th:field="*{fecha}" class="form-control">
-					</div>
-					<div class="form-group">
-						<label>Humedad</label>
-						<input type="text" name="humedad"  th:field="*{humedad}" class="form-control"
-						placeholder="Humedad...">
-					</div>
-					<div class="form-group">
-						<label>Observación</label>
-						<input type="text" name="observacion"  th:field="*{observacion}" class="form-control"
-						placeholder="Observación...">
-					</div>
+						<label>E-mail</label>
+						<input type="text" name="email"  th:field="*{email}" class="form-control"
+						placeholder="Digite la E-mail...">
+					</div>	
 					<br>
 					<div class="box-footer">
 						<button class="btn btn-success">Actualizar usuario</button>

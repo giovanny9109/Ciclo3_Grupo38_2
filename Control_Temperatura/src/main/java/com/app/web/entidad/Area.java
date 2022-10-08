@@ -41,11 +41,11 @@ public class Area {
 		this.id = id;
 	}
 
-	public String getnombrearea() {
+	public String getNombrearea() {
 		return nombrearea;
 	}
 
-	public void setnombrearea(String nombrearea) {
+	public void setNombrearea(String nombrearea) {
 		this.nombrearea = nombrearea;
 	}
 
