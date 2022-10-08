@@ -116,7 +116,6 @@ public class UsuarioControlador {
 	public String actualizaUsuario(@PathVariable Integer id, @ModelAttribute("usuarios") Usuarios usuarios, Model modelo) {
 		Usuarios usuario = servicio.obtenerusuarioPorId(id);
 		usuario.setId(id);
-		usuario.setApellido(usuarios.getApellido());
 		usuario.setEmail(usuarios.getEmail());
 		usuario.setIdentificacion(usuarios.getIdentificacion());
 		usuario.setNombre(usuarios.getNombre());

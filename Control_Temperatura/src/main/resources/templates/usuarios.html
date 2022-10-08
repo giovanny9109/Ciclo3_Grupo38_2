@@ -23,8 +23,7 @@
 		<table class="table">
   			<thead class="table-dark">
   				<tr>
-  					<th>Nombre</th>
-  					<th>Apellido</th>
+  					<th>Nombre completo</th>
   					<th>Cédula</th>
   					<th>E-mail</th>
   					<th>Acciones</th>
@@ -32,8 +31,7 @@
   			</thead>
  			<tbody>
  				<tr th:each="usuarios : ${usuarios}">
- 					<td th:text = "${usuarios.nombre}">Nombre</td> 
- 					<td th:text = "${usuarios.apellido}">Apellido</td>
+ 					<td th:text = "${usuarios.nombre}">Nombre completo</td>
   					<td th:text = "${usuarios.identificacion}">Cédula</td>
   					<td th:text = "${usuarios.email}">E-mail</td> 
   					<td>

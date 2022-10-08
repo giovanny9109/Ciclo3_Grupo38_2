@@ -21,8 +21,6 @@ public class Usuarios {
 	
 	@Column(name = "nombre", nullable = true)
 	private String nombre;
-	@Column(name = "apellido", nullable = false, length = 120)
-	private String apellido;
 	@Column()
 	private Integer identificacion;	
 	@Column(name = "email", nullable = false, length = 120)
@@ -37,7 +35,6 @@ public class Usuarios {
 		super();
 		this.id = id;
 		this.nombre = nombre;
-		this.apellido = apellido;
 		this.identificacion = identificacion;
 		this.email = email;
 	}
@@ -45,7 +42,6 @@ public class Usuarios {
 	public Usuarios(String nombre, String apellido, Integer identificacion, String email) {
 		super();
 		this.nombre = nombre;
-		this.apellido = apellido;
 		this.identificacion = identificacion;
 		this.email = email;
 	}
@@ -66,14 +62,6 @@ public class Usuarios {
 		this.nombre = nombre;
 	}
 
-	public String getApellido() {
-		return apellido;
-	}
-
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-
 	public Integer getIdentificacion() {
 		return identificacion;
 	}
@@ -92,7 +80,7 @@ public class Usuarios {
 
 	@Override
 	public String toString() {
-		return "Usuarios [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", identificacion="
+		return "Usuarios [id=" + id + ", nombre=" + nombre + ", identificacion="
 				+ identificacion + ", email=" + email + "]";
 	}
 	
