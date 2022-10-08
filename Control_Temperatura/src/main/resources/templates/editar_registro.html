@@ -16,19 +16,31 @@
 					<form th:action="@{/registro/{id}(id=${registro.id})}" th:object="${registro}" method="POST">
 					
 					<div class="form-group">
-						<label>Area Operativa</label>
-						<input type="text" name="area_operativa"  th:field="*{areaOperativa}" class="form-control"
-						placeholder="Digite el area operativa...">
+					<label>Area Operativa</label>
+					<br>
+					<select name="areaOperativa">
+							<option>Seleccione el area:</option>	
+	                			<option th:each="area : ${area}" th:model="${area.id}" th:value="${area.id}" th:text = "${area.nombrearea}" th:selected="true"
+	                			th:field="*{areaOperativa}">
+	                			</option>  	                			
+              			</select>
 					</div>
+					
+					<div class="form-group">
+						<label>Encargado</label>		
+						<br>		
+						<select name="encargadoID">
+							<option>Seleccione el encargado:</option>	
+	                			<option th:each="usuarios : ${usuarios}" th:model="${usuarios.id}" th:value="${usuarios.id}" th:text = "${usuarios.nombre}" th:selected="true"
+	                			th:field="*{encargadoID}">
+	                			</option>  	                			
+              			</select>
+              		</div>   
+					
 					<div class="form-group">
 						<label>Cadena de frio</label>
 						<input type="text" name="cadena_frio"  th:field="*{cadenaFrio}" class="form-control"
 						placeholder="Digite la cadena de frío...">
-					</div>
-					<div class="form-group">
-						<label>Encargado</label>
-						<input type="text" name="encargadoid"  th:field="*{encargadoID}" class="form-control"
-						placeholder="Encargado...">
 					</div>
 					<div class="form-group">
 						<label>Fecha</label>

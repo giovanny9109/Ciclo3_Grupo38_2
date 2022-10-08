@@ -161,7 +161,9 @@ public class UsuarioControlador {
 
 	@GetMapping("/registro/editar/{id}")
 	public String editaruregistroForm(@PathVariable Integer id, Model modelo) {
+		modelo.addAttribute("area", areaservicio.listarTodasLasAreas());
 		modelo.addAttribute("registro", registroservicio.obtenerregistroPorId(id));
+		modelo.addAttribute("usuarios", servicio.listarTodoslosUsuarios());
 		return "editar_registro";
 	}
 	
