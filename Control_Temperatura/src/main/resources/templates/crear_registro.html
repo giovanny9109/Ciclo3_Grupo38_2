@@ -22,17 +22,22 @@
 	                			th:field="*{areaOperativa}">
 	                			</option>  	                			
               			</select>
+              		</div> 
+              		<div class="form-group">
+						<label>Encargado</label>		
+						<br>		
+						<select name="encargadoID">
+							<option>Seleccione el encargado:</option>	
+	                			<option th:each="usuarios : ${usuarios}" th:model="${usuarios.id}" th:value="${usuarios.id}" th:text = "${usuarios.nombre}" th:selected="true"
+	                			th:field="*{encargadoID}">
+	                			</option>  	                			
+              			</select>
               		</div>              		
 					
 					<div class="form-group">
 						<label>Cadena de frio</label>
 						<input type="text" name="cadena_frio"  th:field="*{cadenaFrio}" class="form-control"
 						placeholder="Digite la cadena de frío...">
-					</div>
-					<div class="form-group">
-						<label>Encargado</label>
-						<input type="text" name="encargadoid"  th:field="*{encargadoID}" class="form-control"
-						placeholder="Encargado...">
 					</div>
 					<div class="form-group">
 						<label>Fecha</label>

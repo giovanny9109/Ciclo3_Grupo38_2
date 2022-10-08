@@ -149,6 +149,7 @@ public class UsuarioControlador {
 		Registro registro = new Registro();
 		modelo.addAttribute("registro", registro);
 		modelo.addAttribute("area", areaservicio.listarTodasLasAreas());
+		modelo.addAttribute("usuarios", servicio.listarTodoslosUsuarios());
 		return "crear_registro";
 	} 
 	
