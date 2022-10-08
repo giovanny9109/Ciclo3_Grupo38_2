@@ -31,7 +31,7 @@ public class Usuarios {
 	public Usuarios() {
 	}
 
-	public Usuarios(Integer id, String nombre, String apellido, Integer identificacion, String email) {
+	public Usuarios(Integer id, String nombre, Integer identificacion, String email) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -39,7 +39,7 @@ public class Usuarios {
 		this.email = email;
 	}
 
-	public Usuarios(String nombre, String apellido, Integer identificacion, String email) {
+	public Usuarios(String nombre, Integer identificacion, String email) {
 		super();
 		this.nombre = nombre;
 		this.identificacion = identificacion;
